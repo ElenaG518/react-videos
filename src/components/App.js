@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import Title from './Title';
 
 class App extends React.Component {
     state = {
@@ -32,10 +33,11 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="ui container">
+            <div className="container">
+            <Title title="Youtubelicious" />
                 <SearchBar onFormSubmit ={this.onTermSubmit} />
-                <div className="ui grid">
-                    <div className="ui row">
+                <div className="ui grid centered container">
+                    <div className="ui stackable column grid">
                         <div className="eleven wide column">
                             <VideoDetail video={this.state.selectedVideo}/>
                         </div>
